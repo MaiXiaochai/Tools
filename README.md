@@ -1,2 +1,2 @@
 # Tools
-Some funcations or classes which are used commonly.
+Some functions and classes which are used commonly.
