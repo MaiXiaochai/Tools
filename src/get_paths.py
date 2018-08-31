@@ -15,7 +15,7 @@ def get_paths(dir_path):
         tmp_path = dir_path + path
 
         if os.path.isdir(tmp_path):
-                yield from get_paths(tmp_path + '/')
+            yield from get_paths(tmp_path + '/')
 
         else:
             yield tmp_path
