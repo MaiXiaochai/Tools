@@ -7,7 +7,7 @@ def get_paths(dir_path):
     """
     生成器。
     遍历指定目录下的所有非目录文件。
-    :param dir_path: str/要遍历的文件
+    :param dir_path: str/要遍历的目录路径
     :return: str/文件路径
     """
 
