@@ -5,7 +5,7 @@ from os import popen
 
 class UpdtPyLibs(object):
     """
-    升级所有第三方python库到最新版本
+    升级所有第三方有更新的python库到最新版本
     """
 
     @staticmethod
