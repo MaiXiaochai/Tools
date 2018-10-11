@@ -22,6 +22,6 @@
       若tbl_names没有填写表名称，则程序默认导出所有表ER结构。
    
 ### 3. 开始使用
-* 切换到er_to_file.py所在目录，运行
-* python er_to_file.py
+* 切换到er_to_file.py所在目录，运行  
+  python er_to_file.py
 * 执行完成后会在er_to_file.py同级目录下生成ER.doc文件。
