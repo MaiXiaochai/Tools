@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 # @File:     orcl_pools.py
-# @Project:  tools
+# @Project:  Tools
 # @Date:     2018/9/28 10:27
-# @Author:   ZhangChuan
-# @License:  ©2018 mabotech Co.,Ltd. All rights reserved.
+# @Author:   MaiXiaochai
 
 import cx_Oracle as Oracle
 from DBUtils.PooledDB import PooledDB

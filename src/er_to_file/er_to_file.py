@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 # @File:     er_to_file.py
-# @Project:  tools
-# @Date:     2018/9/27 16:06
-# @Author:   ZhangChuan
-# @License:  ©2018 mabotech Co.,Ltd. All rights reserved.
+# @Project:  Tools
+# @Date:     2018/10/11 20:23
+# @Author:   MaiXiaochai
 
 from docx import Document
 from docx.shared import Pt, RGBColor
@@ -32,8 +31,8 @@ class ErTransUtils(object):
         demo:
         -------------------------------[ 处理前 ]-----------------------------------------
         column_id, column_name, data_type, data_length, data_precision, nullable, comments
-        (1,         'ASSETNUM', 'VARCHAR2', 120,        None,           'N',       None)
-        (2,         'PARENT',   'VARCHAR2', 120,        None,           'Y',       None)
+        (1,         'xxxTNUM', 'VARCHAR2', 120,        None,           'N',       None)
+        (2,         'xxxENT',  'VARCHAR2', 120,        None,           'Y',       None)
         ----------------------------------------------------------------------------------
 
         -------------------------[ 处理后 ]------------------------
@@ -228,18 +227,18 @@ def main():
 
     # oracle数据库连接配置
     orcl_cfg = {
-        'user': 'flxuser',
-        'passwd': 'flxuser',
-        'host': '192.168.158.219',
+        'user': 'passwd',
+        'passwd': 'passwd',
+        'host': 'ip_str',
         'port': 1521,
-        'sid': 'bfcecdw'
+        'sid': 'sid'
     }
 
     # 需要导出ER到文件的表的名称
     tbl_names = [
-        'FACT_BARC_SHIP_INFO',
-        'FACT_BARC_SHIP_DETAIL',
-        'FACT_RAD_WRTY_CLM_DT_LIS'
+        'table_name1',
+        'table_name2',
+        'table_name3'
     ]
 
     er_to_file(orcl_cfg, fetch_sql, tbl_names, head_row, path)

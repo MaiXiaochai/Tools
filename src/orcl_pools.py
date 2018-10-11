@@ -3,7 +3,7 @@
 # @File:     orcl_pools.py
 # @Project:  Tools
 # @Date:     2018/9/28 10:27
-# @Author:   maixiaochai
+# @Author:   MaiXiaochai
 
 import cx_Oracle as Oracle
 from DBUtils.PooledDB import PooledDB
