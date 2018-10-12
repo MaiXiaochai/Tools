@@ -47,7 +47,7 @@ class ErTransUtils(object):
 
         # 字段类型
         # data_type(data_length[, data precision])
-        if not row_data[3]:
+        if not row_data[3] or "TIMESTAMP" in row_data[2].upper():
             res_line.append(row_data[2].upper())
 
         else:
