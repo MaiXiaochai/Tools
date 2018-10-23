@@ -15,12 +15,12 @@
 ### 2. 使用方法
 * 单个建表语句生成
   * 用sqlplus连接到oracle，用desc table_name命令获取表结构，如下图所示，  
-    ![desc table_name](https://img-blog.csdn.net/20181023185141974?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21haXhpYW9jaGFp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+    ![desc table_name](desc_table_name.png)  
   * 然后将该结构保存到py脚本同级目录下的文件中，该文件名为要创建的数据表的名称，后缀为.struc。如下图所示，  
-    ![struc_in_file](https://img-blog.csdn.net/20181023191059828?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21haXhpYW9jaGFp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+    ![struc_in_file](struc_in_file.png)  
   * 然后运行py脚本， python desc_struc_to_sql.py。之后会在统计目录下生成CREATE_TABLE_SQL.sql文件，里边是生成好的建表语句。  
     生成好的建表语句，如下图，  
-    ![create_sql](https://img-blog.csdn.net/20181023190454153?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21haXhpYW9jaGFp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+    ![create_sql](create_sql.png)
   
 * 多个检表语句生成
   * 若要生成多个建表语句，则只需要将不同的表结构保存在各自的 表名称.struc文件中,  
