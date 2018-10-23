@@ -12,17 +12,19 @@
 * Python3.x.x
 * Python库：os
 
-### 2. 使用设置
-* 用sqlplus连接到oracle，用desc table_name命令获取表结构，如下图所示：
+### 2. 使用方法
+* 单个建表语句生成
+  * 用sqlplus连接到oracle，用desc table_name命令获取表结构，如下图所示，  
+    ![desc table_name](https://img-blog.csdn.net/20181023185141974?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21haXhpYW9jaGFp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+  * 然后将该结构保存到py脚本同级目录下的文件中，该文件名为要创建的数据表的名称，后缀为.struc。如下图所示，  
+    ![struc_in_file](https://img-blog.csdn.net/20181023191059828?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21haXhpYW9jaGFp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+  * 然后运行py脚本， python desc_struc_to_sql.py。之后会在统计目录下生成CREATE_TABLE_SQL.sql文件，里边是生成好的建表语句。  
+    生成好的建表语句，如下图，  
+    ![create_sql](https://img-blog.csdn.net/20181023190454153?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21haXhpYW9jaGFp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
   
-* 用文本编辑器打开er_to_file.py
-    * 修改orcl_cfg配置，该配置为连接oracle数据库的相关信息；
-    * 修改tbl_names，该配置中填写的是要导出ER结构的表,  
-      若tbl_names没有填写表名称，则程序默认导出所有表ER结构。
-   
-### 3. 开始使用
-* 切换到er_to_file.py所在目录，运行  
-  python er_to_file.py
-* 执行完成后会在er_to_file.py同级目录下生成ER.doc文件。
+* 多个检表语句生成
+  * 若要生成多个建表语句，则只需要将不同的表结构保存在各自的 表名称.struc文件中,  
+    然后运行 python desc_struc_to_sql.py，之后会在同级目录的CREATE_TABLE_SQL.sql 文件中生成所有的建表语句。
 
-[desc]()
+
+
