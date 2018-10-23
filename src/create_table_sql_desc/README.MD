@@ -20,7 +20,7 @@
   * 然后将该结构保存到py脚本同级目录下的文件中，该文件名为要创建的数据表的名称，后缀为 *.struc*。如下图所示，  
     ![struc_in_file](struc_in_file.png)  
      
-  * 然后运行py脚本，```python desc_struc_to_sql.py```。之后会在统计目录下生成 *CREATE_TABLE_SQL.sql* 文件，里边是生成好的建表语句。如下图，  
+  * 然后运行py脚本，```python desc_struc_to_sql.py```。之后会在同级目录下生成 *CREATE_TABLE_SQL.sql* 文件，里边是生成好的建表语句。如下图，  
     ![create_sql](create_sql.png)  
     
   
