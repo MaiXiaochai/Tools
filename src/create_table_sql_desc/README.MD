@@ -6,7 +6,7 @@
 
 * 目前实现了基本功能    
     * 2018-10-23
-        * 用由oracle ```desc your_table_name```命令生成建表语句。
+        * 用由oracle ```desc your_table_name```命令获取的表结构生成建表语句。
 
 ### 1. 环境准备
 * Python3.x.x
