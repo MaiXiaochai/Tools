@@ -19,8 +19,7 @@ class OrclPool(object):
     'passwd': 'passwd_str',
     'host': 'xxx.xxx.xxx.xxx',
     'port': port_int,
-    'sid': 'sid'
-    }
+    'sid': 'sid'}
     """
 
     __pool = None
