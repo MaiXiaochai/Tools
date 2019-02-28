@@ -70,6 +70,3 @@ class OrclPool(object):
 
         self.execute_sql(sql, args)
         return self.cur.fetchall()
-
-    def __del__(self):
-        self.conn.close()
