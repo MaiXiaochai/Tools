@@ -12,6 +12,8 @@ from DBUtils.PooledDB import PooledDB
 class OrclPool(object):
     """
     这里封装了一些有关oracle连接池的功能
+    sid和service_name只能写一个，程序会自动判断哪个有值，
+    若两个都有值，则默认使用sid
 
     config样例:
     orcl_cfg = {
@@ -19,7 +21,8 @@ class OrclPool(object):
     'passwd': 'passwd_str',
     'host': 'xxx.xxx.xxx.xxx',
     'port': port_int,
-    'sid': 'sid'}
+    'sid': 'sid',
+    'service_name': 'service_name'}
     """
 
     __pool = None
@@ -38,8 +41,13 @@ class OrclPool(object):
             # maxconnections：  最大允许连接数量
             # blocking：        达到最大数量时是否阻塞
             # maxusage：        单个连接最大复用次数
+            host, port, sid, service_name = conf.get('host'), conf.get('port'), conf.get('sid'), conf.get('service_name')
 
-            dsn = Oracle.makedsn(conf.get('host'), conf.get('port'), conf.get('sid'))
+            if sid:
+                dsn = Oracle.makedsn(host, port, sid=sid)
+            elif service_name:
+                dsn = Oracle.makedsn(host, port, service_name=conf.get('service_name'))
+
             OrclPool.__pool = PooledDB(Oracle, user=conf['user'], password=conf['passwd'], dsn=dsn,
                                        mincached=5, maxcached=30)
 
