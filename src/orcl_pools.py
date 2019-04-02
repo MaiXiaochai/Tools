@@ -17,7 +17,7 @@ class OrclPool(object):
         若两个都有值，则默认使用sid；
         若只想用其中一个，则只需要把另一个设置为空即可。如，service_name = ''
 
-    3) 关于config的设置，注意只有 port 的值得类型是 int，以下是config样例:
+    3) 关于config的设置，注意只有 port 的值的类型是 int，以下是config样例:
         orcl_cfg = {
                     'user': 'user_name_str',
                     'passwd': 'passwd_str',
