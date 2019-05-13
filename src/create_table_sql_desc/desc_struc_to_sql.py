@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# @File:     desc_struc.py
+# @File:     desc_struc_to_sql.py
 # @Project:  ERP_SYNC
 # @Date:     2018/10/23 10:52
-# @Author:   ZhangChuan
+# @Author:   MaiXiaochai
 # @License:  ©2018 mabotech Co.,Ltd. All rights reserved.
 
 import os
