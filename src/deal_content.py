@@ -8,6 +8,7 @@
 # GitHub   : https://github.com/MaiXiaochai
 # @Link    : https://maixiaochai.github.io
 
+from re import findall, compile, sub
 from os import listdir
 from os.path import isdir, splitext
 from datetime import datetime
@@ -27,7 +28,12 @@ class HandleString:
     def save_data(file_path, content, level='w'):
         with open(file_path, level.lower(), encoding='utf8') as op:
             op.write(content)
-    
+
+    @staticmethod
+    def read_lines(file_path):
+        with open(file_path, 'r', encoding='utf8') as f:
+            return f.readlines()
+
     @classmethod
     def list_path(cls, dir_path, suffix, depth=0):
         """
@@ -77,11 +83,11 @@ class HandleString:
         return res
 
 
-def main():
+def del_exit():
     """
     1）删除SQL文件中最后的'EXIT;'
     2）原理：内容全部大写，然后 count(EXIT;)，
-        如果结果 <= 1, 则替换"EXIT;"为空,
+        如果 count(EXIT;)结果 <= 1, 则替换"EXIT;"为空,
         否则，记录路径到 undo_file，便于手工处理
     """
     undo_file = "undo.log"
@@ -107,5 +113,19 @@ def main():
     print("Done.")
 
 
+def distinct():
+    """去除重复行"""
+    path = "provc.txt"
+    save_path = "distinct.txt"
+    hs = HandleString()
+    res = hs.read_lines(path)
+
+    rp = {sub(r"\[.*any: ", "", x) for x in res}
+    content = "".join(list(rp))
+
+    hs.save_data(save_path, content, 'w')
+
+
 if __name__ == "__main__":
-    main()
+    # main()
+    distinct()
