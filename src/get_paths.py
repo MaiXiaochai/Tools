@@ -34,7 +34,7 @@ def list_paths(dir_path, depth=0, suffix=None):
 
         if isdir(tmp_path):
             if current_dir_level < depth:
-                yield from list_paths(tmp_path, suffix, depth - 1)
+                yield from list_paths(tmp_path, depth - 1, suffix)
 
         elif splitext(tmp_path)[-1] == suffix:
             yield tmp_path
