@@ -13,8 +13,6 @@ from os import makedirs, path
 from logbook.more import ColorizedStderrHandler
 from logbook import set_datetime_format, Logger, RotatingFileHandler
 
-from public_funcs import pf
-
 
 class MyLog:
     """
@@ -84,8 +82,8 @@ class MyLog:
 # ===================================================
 
 log_cfg = {
-    'log_folder': '',
-    'log_name': 'mes_191010',
+    'log_folder': './your_log_folder',
+    'log_name': 'your_log_file_name',
     'max_size': 20,
     'backup_count': 5,
 
@@ -96,3 +94,11 @@ max_size = log_cfg.get('max_size')
 backup_count = log_cfg.get('backup_count')
 
 log = MyLog(folder, name, max_size, backup_count).log
+
+
+def demo():
+    log('Hello, logger.')
+
+
+if __name__ == "__main__":
+    demo()
