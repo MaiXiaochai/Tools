@@ -1,21 +1,23 @@
 # -*-coding: utf-8 -*-
 
 
-def nbr_clip(start, end, clip_length):
+def array_slip(start, end, clip_length):
     """
     将步长为1的数轴按照 clip_length 的长度切分为 n 个段，返回 N个左闭右开区间[x, y)，
     最后一个片段的右边界为 end + 1。所以，最好当做 左闭右开区间处理使用，[x, y)。
 
     ----------------------------------[ DEMO ]----------------------------------
     def demo():
-    ls = [1, 2, 3, 4, 5]
-    split_array = nbr_clip(1, 5, 2)
+    # ls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    split_array = nbr_clip(1, 5, 3)
     for i in split_array:
         print(i)
 
     # Out:
-    # (1, 3)
-    # (3, 6)
+    # (1, 4)
+    # (4, 7)
+    # (7, 10)
+    # (10, 13)
     -----------------------------------[ End ]----------------------------------
     :param start:           int/数轴起点
     :param end:             int/数轴终点
@@ -41,8 +43,8 @@ def nbr_clip(start, end, clip_length):
 
 
 def demo():
-    ls = [1, 2, 3, 4, 5]
-    split_array = nbr_clip(1, 5, 2)
+    # ls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    split_array = array_slip(1, 12, 3)
     for i in split_array:
         print(i)
 
