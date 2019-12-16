@@ -9,7 +9,7 @@ def array_slip(start, end, clip_length):
     ----------------------------------[ DEMO ]----------------------------------
     def demo():
     # ls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    split_array = nbr_clip(1, 5, 3)
+    split_array = nbr_clip(1, 12, 3)
     for i in split_array:
         print(i)
 
@@ -49,8 +49,10 @@ def demo():
         print(i)
 
     # Out:
-    # (1, 3)
-    # (3, 6)
+    # (1, 4)
+    # (4, 7)
+    # (7, 10)
+    # (10, 13)
 
 
 if __name__ == "__main__":
